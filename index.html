@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="body">
+    <style>
+        *{
+    padding: 0;
+    margin:  0;
+}
+section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    cursor: pointer;
+    height: 100vh;
+    width: 100%;
+}
+.ht{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    cursor: pointer;
+    height: 100px;
+    width: 412px;
+    background: none;
+    padding: 15px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    color: white;
+    background: 
+    linear-gradient(45deg,
+     pink,skyblue, crimson);
+    font-size: 30px;
+    height: 100px;
+    width: 280px;
+    border-radius: 30px;
+    box-shadow: 0.5px 0.5px 1em black;
+    animation: 2s infinite button;
+}
+
+@keyframes button{
+    25%{
+        background: linear-gradient(45deg, 
+        red, chartreuse,teal);
+    }
+    50%{
+        background: linear-gradient(45deg,
+         blue, yellow, green);
+    }
+    75%{
+        background: linear-gradient(45deg,
+         black, orangered, white);
+    }
+    100%{
+        background: linear-gradient(45deg, 
+        #d33b94, darkblue, orange);
+    }
+}
+
+h2{ font-size: 0;}
+    </style>
+    <section>
+        <div class="ht">
+        <button> Change BG Color </button>
+        <h2></h2>
+        </div>
+    </section>
+    <script>
+         const button = document.querySelector("button");
+ const h2El = document.querySelector("h2");
+ const bgEl = document.querySelector("section");
+ const hexcolorEl =
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+    "A", "B", "C", "D", "E", "F"];
+button.addEventListener("click",()=>{
+    let color = "#";
+    color += Math.random().toString(16).
+    slice(2,8).toUpperCase();
+    bgEl.style.backgroundColor = color;
+    h2El.innerText = color;
+
+});
+    </script>
+
+
+
+    <script src="code.js"></script>
+</body>
+</html>
